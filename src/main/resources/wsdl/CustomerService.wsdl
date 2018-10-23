@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.example.org/customer/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="customer"
+	targetNamespace="http://www.example.org/customer/">
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://www.example.org/customer/">
+			
+			<xsd:element name="lookupCustomerRequest"
+				type="tns:LookupCustomerRequestType">
+			</xsd:element>
+			<xsd:element name="lookupCustomerResponse"
+				type="tns:LookupCustomerResponseType">
+			</xsd:element>
+
+			<xsd:complexType name="LookupCustomerRequestType">
+				<xsd:sequence>
+					<xsd:element name="customerId" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="LookupCustomerResponseType">
+				<xsd:sequence>
+					<xsd:element name="customer" type="tns:CustomerType"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="CustomerType">
+				<xsd:sequence>
+					<xsd:element name="firstname" type="xsd:string"></xsd:element>
+					<xsd:element name="lastname" type="xsd:string"></xsd:element>
+					<xsd:element name="address" type="xsd:string"></xsd:element>
+					<xsd:element name="city" type="xsd:string"></xsd:element>
+					<xsd:element name="state" type="xsd:string"></xsd:element>
+					<xsd:element name="telephone" type="xsd:string"></xsd:element>
+					<xsd:element name="email" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="lookupCustomerRequest">
+        <wsdl:part name="in" element="tns:lookupCustomerRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="lookupCustomerResponse">
+        <wsdl:part name="out" element="tns:lookupCustomerResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CustomerPortType">
+		<wsdl:operation name="lookupCustomer">
+			<wsdl:input message="tns:lookupCustomerRequest" />
+			<wsdl:output message="tns:lookupCustomerResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="customerSOAP" type="tns:CustomerPortType">
+
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="lookupCustomer">
+
+			<soap:operation
+				soapAction="http://www.example.org/customer/lookupCustomer" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CustomerService">
+		<wsdl:port binding="tns:customerSOAP" name="CustomerPort">
+			<soap:address
+				location="http://localhost:8080/CustomerPortType" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

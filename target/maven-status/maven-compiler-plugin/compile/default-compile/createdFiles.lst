@@ -1,0 +1,16 @@
+com\mycompany\CamelRoute$1.class
+com\mycompany\Launcher.class
+org\example\customer\CustomerService.class
+org\example\customer\package-info.class
+org\example\customer\CustomerType.class
+org\example\customer\ResponseConverter.class
+com\mycompany\CamelRoute$2.class
+org\example\customer\LookupCustomerResponseType.class
+com\mycompany\CamelRoute.class
+com\mycompany\Customer.class
+org\example\customer\ObjectFactory.class
+com\mycompany\CustomerBuilder.class
+org\example\customer\CustomException.class
+org\example\customer\CustomerPortType.class
+org\example\customer\LookupCustomerImpl.class
+org\example\customer\LookupCustomerRequestType.class

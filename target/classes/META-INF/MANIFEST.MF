@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1534836182768
+Build-Jdk: 1.8.0_181
+Built-By: dule
+Bundle-Description: Camel Java DSL Example
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-ManifestVersion: 2
+Bundle-Name: Camel Java DSL Example [zadatak3JavaDsl]
+Bundle-SymbolicName: zadatak3JavaDsl
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.mycompany;uses:="javax.xml.bind.annotation,org.apach
+ e.camel,org.apache.camel.builder,org.apache.camel.dataformat.bindy.anno
+ tation";version="1.0.0",org.example.customer;uses:="javax.jws,javax.jws
+ .soap,javax.xml.bind,javax.xml.bind.annotation,javax.xml.namespace,java
+ x.xml.ws,org.apache.camel";version="1.0.0"
+Import-Package: javax.jws,javax.jws.soap,javax.xml.bind,javax.xml.bind.a
+ nnotation,javax.xml.namespace,javax.xml.ws,org.apache.camel;version="[2
+ .21,3)",org.apache.camel.builder;version="[2.21,3)",org.apache.camel.co
+ mponent.cxf;version="[2.21,3)",org.apache.camel.dataformat.bindy.annota
+ tion;version="[2.21,3)",org.apache.camel.impl;version="[2.21,3)",org.ap
+ ache.camel.model;version="[2.21,3)",org.apache.camel.model.dataformat;v
+ ersion="[2.21,3)",org.apache.camel.spi;version="[2.21,3)",org.example.c
+ ustomer
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.2.0.201605172007
