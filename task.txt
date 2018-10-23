@@ -1,0 +1,12 @@
+3. Kreirati file-pooling aplikaciju koja ce na zadatoj lokaciji kupiti customer fajlove.
+Format customer fajlova bice u proizvoljnom string sablonu (sve vrednosti spojene u jednoj liniji npr).
+Nakon parsiranja, pozivom na SOAP servis vrsice se provera da li klijent postoji u bazi.
+Ako ne, poslace podatke REST servisu pomocu kojeg se klijent upisuje u bazu. Inicijalni fajl ulogovati u log fajl u target folder,
+ciji naziv ce biti u formi imekorisnika_prezimekorisnika. Ukoliko je klijent uspesno kreiran, sacuvati njegove podatke u CSV
+formatu u success folder, u suprotnom, inicijalni fajl u error folder.
+
+Tehnicki detalji:
+Za rad sa CSV formatom koristiti bindy.
+Aplikacija mora handle-ovati svaki exception tako da ne dodje do prestanka u radu aplikacije prilikom gresaka.
+Rute kreirati na oba nacina (Spring & Java DSL).
+Za testiranje koristiti mock komponente.
